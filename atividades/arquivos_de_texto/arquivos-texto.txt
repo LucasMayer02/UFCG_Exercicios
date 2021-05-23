@@ -1,0 +1,13 @@
+DIFERENÇA ENTRE ARQUIVOS TEXTO E BINÁRIO
+
+Nos arquivos texto os dados são representados linha à linha. Na prática é uma sequência de bytes representando caracteres. As linhas são representadas pelo caracter de quebra de linha, por exemplo: '\n'.Já os arquivos binários são representados por uma sequência de bytes sem o conceito de quebra de linha. Ele armazena o dado literal, ou seja, não são caracteres.
+
+Os arquivos texto necessitam de parsing (análise caractere à caractere) para identificar as quebras de linha. Não é necessário conhecimento prévio sobre a disposição dos dados. Você apenas identifica linhas cheias de caracteres até encontrar o fim do arquivo, representado pela constante EOF (end of file).
+Já nos arquivos binários é obrigatório ter conhecimento sobre os dados, uma vez que o processamento é feito por deslocamento. É necessário saber que os 2 primeiros bytes representam um número Inteiro.
+
+Quando falamos desses dois formatos de arquivos sequenciais um dos argumentos mais fortes relacionados ao formato texto é sua facilidade de leitura por humanos. Por armazenar caracteres conseguimos abrir o arquivo e interpretar seu conteúdo. No caso de arquivos binário é preciso decodificar o arquivo transformando-o em algum formato que um humano poderia compreender seu conteúdo. 
+
+Quando estamos escrevendo um programa que manipula arquivos sequenciais e algo não está ocorrendo da forma à qual esperamos, precisamos depurar o problema. Arquivos binários são complicados de depurar sua manipulação uma vez que não legível e sequer estruturado, em linhas por exemplo. Sua única estrutura é em bytes. Arquivos texto por outro lado, permitem uma depuração simplificada e legível por humanos. 
+Arquivos texto, pelo fato de todos os dados serem convertidos para caracteres, tendem a gastar mais espaço de armazenamento para uma mesma quantidade de dados em um arquivo binário. Uma aplicação que é limitada em espaço de armazenamento, poderia considerar usar um formato binário para reduzir o volume de espaço ocupado.
+
+I
